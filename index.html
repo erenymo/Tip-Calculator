@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splitter</title>
+
+    <!-- Tailwind CSS-->
+    <link rel="stylesheet" href="./output/tailwind.css" />
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/274096fc0d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Disable arrows from Number input-->
+    <style>
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+    </style>
+
+    <!-- Javascript-->
+    <script defer src="script.js"></script>
+  </head>
+
+  <body
+    class="font-primary bg-lightGrayishCyan h-screen flex md:gap-28 flex-col items-center justify-center"
+  >
+    <h1 class="w-32 text-darkGrayishCyan text-2xl mt-72 md:mt-0">
+      S P L I T T E R
+    </h1>
+
+    <!-- container-->
+    <div
+      class="container p-8 shadow-md bg-white md:rounded-3xl rounded-t-3xl rounded-b-none flex flex-col md:flex-row md:gap-14 gap-6 mt-12 md:mt-0"
+    >
+      <!--Left Box-->
+      <div class="w-full">
+        <div class="flex justify-between">
+          <h2 class="text-grayishCyan">Bill</h2>
+          <h2 class="bill__error text-red-400 hidden">Enter valid input</h2>
+        </div>
+        <div class="relative">
+          <input
+            id="input__bill"
+            class="bill__error_input bg-veryLightGrayishCyan w-full text-2xl h-12 mt-2 text-veryDarkGrayishCyan text-right pr-4 outline-primaryCyan"
+            placeholder="142.55"
+            type="number"
+          />
+          <p class="absolute top-4 left-4 text-2xl text-grayishCyan">$</p>
+        </div>
+
+        <!--Tip Grid-->
+        <h2 class="text-grayishCyan md:mt-10 mt-6">Select Tip %</h2>
+        <div
+          class="tips grid grid-cols-2 md:grid-cols-3 gap-6 text-2xl text-center mt-2"
+        >
+          <div
+            class="tip tip-1 hover:bg-grayishCyan hover:cursor-pointer active:translate-y-1 duration-100 bg-veryDarkGrayishCyan rounded-lg text-white py-2"
+          >
+            5%
+          </div>
+          <div
+            class="tip tip-2 hover:bg-grayishCyan hover:cursor-pointer active:translate-y-1 duration-100 bg-veryDarkGrayishCyan rounded-lg text-white py-2"
+          >
+            10%
+          </div>
+          <div
+            class="tip tip-3 hover:bg-grayishCyan hover:cursor-pointer active:translate-y-1 duration-100 bg-veryDarkGrayishCyan rounded-lg text-white py-2"
+          >
+            15%
+          </div>
+          <div
+            class="tip tip-4 hover:bg-grayishCyan hover:cursor-pointer active:translate-y-1 duration-100 bg-veryDarkGrayishCyan rounded-lg text-white py-2"
+          >
+            25%
+          </div>
+          <div
+            class="tip tip-5 hover:bg-grayishCyan hover:cursor-pointer active:translate-y-1 duration-100 bg-veryDarkGrayishCyan rounded-lg text-white py-2"
+          >
+            50%
+          </div>
+          <input
+            id="input__tip"
+            class="tip tip-6 bg-veryLightGrayishCyan text-right outline-primaryCyan text-veryDarkGrayishCyan pr-2"
+            placeholder="Custom"
+            type="number"
+          />
+        </div>
+
+        <div class="flex justify-between md:mt-10 mt-6">
+          <h2 class="text-grayishCyan">Number of People</h2>
+          <h2 class="people__error text-red-400 hidden">Enter valid input</h2>
+        </div>
+        <div class="relative">
+          <input
+            id="input__people"
+            class="people__error_input bg-veryLightGrayishCyan w-full text-2xl h-12 mt-2 text-veryDarkGrayishCyan text-right pr-4 outline-primaryCyan"
+            placeholder="1"
+            type="number"
+          />
+          <p class="absolute top-5 left-4 text-xl text-grayishCyan">
+            <i class="fa-solid fa-user"></i>
+          </p>
+        </div>
+      </div>
+
+      <!--Right Box-->
+      <div
+        class="w-full py-10 px-8 flex flex-col justify-between bg-veryDarkGrayishCyan rounded-2xl"
+      >
+        <div>
+          <div class="flex justify-between items-center">
+            <div>
+              <h2 class="text-veryLightGrayishCyan">Tip Amount</h2>
+              <p class="text-grayishCyan text-sm">/ person</p>
+            </div>
+            <div>
+              <h3 class="tip-amount text-3xl md:text-5xl text-primaryCyan">
+                $4.27
+              </h3>
+            </div>
+          </div>
+
+          <div class="flex justify-between mt-10 items-center">
+            <div>
+              <h2 class="text-veryLightGrayishCyan">Total</h2>
+              <p class="text-grayishCyan text-sm">/ person</p>
+            </div>
+            <div>
+              <h3 class="total-amount text-3xl md:text-5xl text-primaryCyan">
+                $32.79
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="btn__reset bg-primaryCyan py-3 rounded text-xl text-veryDarkGrayishCyan mt-6 md:mt-0 hover:bg-lightGrayishCyan active:translate-y-1 duration-200"
+        >
+          RESET
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
